@@ -1,0 +1,5 @@
+.transition-fade {
+  opacity: 1;
+  transition: 1000ms;
+  transform-origin: left;
+}

@@ -1,14 +1,22 @@
 type StatListIconsProp = {
   categoryDisplay: string;
   setCategoryDisplay: React.Dispatch<React.SetStateAction<any>>;
+  setShowItems: any;
 };
 
 export default function StatListIcons({
   setCategoryDisplay,
   categoryDisplay,
+  setShowItems,
 }: Readonly<StatListIconsProp>) {
   return (
     <div className="flex flex-row justify-evenly items-center border-b-2 border-gray-300 fixed w-1/2 py-2 bg-inherit rounded-xl z-50">
+      <button
+        onClick={() => setShowItems((prev: boolean) => !prev)}
+        className="rounded-xl text-4xl"
+      >
+        &times;
+      </button>
       <button
         onClick={() =>
           setCategoryDisplay((prev: string) =>

@@ -5,6 +5,7 @@ import { ColorFunction } from "../utility/ColorFunction";
 import Tag from "./Tag";
 import { TruncateText } from "../utility/TruncateText";
 import { useApp, useAppUpdateFavoriteChampions } from "../context/Context";
+
 export default function ChampionDetails() {
   const state = useLocation();
   const champId: string = state.state;
@@ -49,7 +50,7 @@ export default function ChampionDetails() {
   } else {
     return (
       <div
-        className=" text-white w-screen h-screen fixed overflow-x-hidden caret-transparent"
+        className=" text-white w-screen h-screen bg-fixed overflow-x-hidden caret-transparent transition-fade"
         style={{
           background: `url(./bigImg/champion/splash/${champId}_${currentSkin}.jpg) center/cover`,
         }}
@@ -57,8 +58,9 @@ export default function ChampionDetails() {
         {/* Image */}
         <BiArrowBack
           size={36}
-          className="fixed top-10 left-10 cursor-pointer z-20 bg-black/50 rounded-full"
+          className="fixed top-10 left-10 cursor-pointer bg-black/50 rounded-full"
           onClick={() => navigation("..")}
+          style={{ zIndex: 1000 }}
         />
         <button
           type="button"

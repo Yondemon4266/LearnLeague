@@ -1,21 +1,35 @@
 import { useState } from "react";
 import Items from "../assets/fr_FR/item.json";
 import StatListIcons from "./StatListIcons";
+import { useAppBuildsContext } from "../context/Context";
 
-export default function ItemsList() {
+export default function ItemsList({
+  setShowItems,
+  champKey,
+  indexItem,
+}: {
+  setShowItems: any;
+  champKey: string;
+  indexItem: number;
+}) {
   const [categoryDisplay, setCategoryDisplay] = useState("");
-
+  const addItemBuild = useAppBuildsContext();
   const itemsData = Object.entries(Items.data).filter(([key, value]: any) => {
-    value.maps["11"] &&
+    return (
+      !value.into &&
+      value.maps["11"] &&
       value.gold.purchasable &&
-      !value.tags.includes("Consumable");
-    console.log(key);
+      !value.tags.includes("Consumable")
+    );
   });
+
   function mappingItems() {
     const items = itemsData
       .filter(([key, value]: any) => {
         if (categoryDisplay) {
-          if (value.tags.includes(categoryDisplay)) return [key, value];
+          if (value.tags.includes(categoryDisplay)) {
+            return [key, value];
+          }
         } else {
           return [key, value];
         }
@@ -25,6 +39,10 @@ export default function ItemsList() {
           <button
             key={key}
             className={`relative z-30 border-2 border-transparent hover:border-solid hover:border-violet-400 group`}
+            onClick={() => {
+              addItemBuild(champKey, key, indexItem, value);
+              setShowItems((prev: boolean) => !prev);
+            }}
           >
             <img
               src={`./img/item/${value.image.full}`}
@@ -49,8 +67,9 @@ export default function ItemsList() {
       <StatListIcons
         setCategoryDisplay={setCategoryDisplay}
         categoryDisplay={categoryDisplay}
+        setShowItems={setShowItems}
       />
-      <div className="flex flex-row flex-wrap justify-center gap-2 pt-16 pb-6">
+      <div className="flex flex-row flex-wrap justify-center items-center h-full gap-2 pt-16 pb-6">
         {mappingItems()}
       </div>
     </>
