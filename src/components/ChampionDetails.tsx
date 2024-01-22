@@ -78,9 +78,9 @@ export default function ChampionDetails() {
         </button>
         <div className="relative w-screen h-screen flex flex-row items-center justify-between max-md:flex-col">
           {/* Start Carousel */}
-          <div className="px-12 my-5 items-center max-md:px-1 max-md:self-start max-md:mt-24">
+          <div className="px-12 my-5 items-center max-md:px-1 max-md:self-start max-md:mt-24 carousel">
             <ul
-              className=" flex flex-col gap-y-2 items-center overflow-y-auto p-3"
+              className=" flex flex-col gap-y-2 items-center overflow-y-auto p-3 carousel2"
               style={{ maxHeight: "600px" }}
             >
               {championData.skins.map((skin: any) => (

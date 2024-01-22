@@ -3,3 +3,14 @@
   transition: 1000ms;
   transform-origin: left;
 }
+
+@media screen and (max-height: 500px) {
+  .championslist {
+    height: 100px;
+  }
+}
+
+@media screen and (max-height: 500px) {
+  .carousel {
+  }
+}
