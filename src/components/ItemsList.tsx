@@ -48,7 +48,7 @@ export default function ItemsList({
             <img
               src={`./img/item/${value.image.full}`}
               alt={value.name}
-              className="w-16 h-16"
+              className="w-16 h-16 max-md:w-12 max-md:h-12"
             />
             <div
               className={`absolute hidden z-50 group-hover:absolute group-hover:top-0 group-hover:z-50 bg-black`}

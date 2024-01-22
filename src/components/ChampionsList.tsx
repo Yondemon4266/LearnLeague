@@ -52,7 +52,7 @@ export default function ChampionsList() {
                     <img
                       src={`./img/champion/${value.champion.image.full}`}
                       alt={key}
-                      className="rounded-lg"
+                      className="rounded-lg max-md:h-12 max-md:w-12"
                     />
                     <h3 className="max-md:text-xs">{key}</h3>
                   </div>
@@ -87,12 +87,12 @@ export default function ChampionsList() {
         type="search"
         onChange={(e) => setSearch(e.target.value)}
         value={search}
-        className="outline-none bg-zinc-800 leading-8 rounded-lg p-3 caret-white w-64 text-center"
+        className="outline-none bg-zinc-800 leading-8 rounded-lg p-3 caret-white w-64 text-center max-sm:text-xs max-md:text-sm"
         placeholder="Chercher un champion..."
       />
       <div className="flex gap-6 mt-3 bg-zinc-800 py-2 px-4 rounded-t-xl ">
         <button
-          className={`cursor-pointer hover:text-gray-300 ${
+          className={`cursor-pointer hover:text-gray-300 max-md:text-sm max-sm:text-xs ${
             displayChoice === "allchampions"
               ? "text-red-600 hover:text-red-800"
               : ""
@@ -107,7 +107,7 @@ export default function ChampionsList() {
           Tous les champions
         </button>
         <button
-          className={`cursor-pointer hover:text-gray-300 ${
+          className={`cursor-pointer hover:text-gray-300  max-md:text-sm max-sm:text-xs ${
             displayChoice === "favoritechampions"
               ? "text-red-600 hover:text-red-800"
               : ""
@@ -133,7 +133,7 @@ export default function ChampionsList() {
       </div>
       {showItems && (
         <div
-          className="absolute w-1/2 h-1/2 bottom-1/3 mb-20 flex flex-col  bg-zinc-800 z-20 rounded-xl overflow-y-scroll border-zinc-800"
+          className="absolute w-1/2 h-1/2 max-md:w-5/6 bottom-1/3 mb-20 flex flex-col  bg-zinc-800 z-20 rounded-xl overflow-y-scroll border-zinc-800 max-md:h-1/3"
           style={{ borderBottom: "20px solid rgb(39, 39, 42)" }}
         >
           <ItemsList

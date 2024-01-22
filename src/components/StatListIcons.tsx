@@ -10,10 +10,10 @@ export default function StatListIcons({
   setShowItems,
 }: Readonly<StatListIconsProp>) {
   return (
-    <div className="flex flex-row justify-evenly items-center border-b-2 border-gray-300 fixed w-1/2 py-2 bg-inherit rounded-xl z-50">
+    <div className="flex flex-row justify-evenly items-center border-b-2 border-gray-300 fixed w-1/2 py-2 bg-inherit rounded-xl z-50 max-md:w-5/6 max-md:px-5">
       <button
         onClick={() => setShowItems((prev: boolean) => !prev)}
-        className="rounded-xl text-4xl"
+        className="rounded-xl text-4xl max-md:text-2xl"
       >
         &times;
       </button>
@@ -24,7 +24,7 @@ export default function StatListIcons({
           )
         }
         className={`rounded-xl ${
-          categoryDisplay === "Armor" ? " border-2 border-red-400" : ""
+          categoryDisplay === "Armor" ? " border-2 border-red-400 " : ""
         }`}
       >
         <img src="./bigImg/perk-images/StatMods/ArmorResIcon.png" alt="armor" />
