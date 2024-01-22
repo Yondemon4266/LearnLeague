@@ -11,6 +11,10 @@
 }
 
 @media screen and (max-height: 500px) {
+  .champdetails {
+    flex-direction: column;
+  }
   .carousel {
+    margin-top: 86px;
   }
 }
