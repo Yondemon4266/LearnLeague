@@ -92,7 +92,7 @@ export default function ChampionDetails() {
                   <img
                     src={`./bigImg/champion/splash/${champId}_${skin.num}.jpg`}
                     alt={skin.name}
-                    className={` max-w-48 max-h-28 max-md:max-h-16 max-md:max-w-24 rounded-lg ${
+                    className={` max-w-48 max-h-28 max-md:max-h-16 max-md:max-w-24 imagecarousel rounded-lg ${
                       currentSkin === skin.num
                         ? `shadow-2xl border-2 border-indigo-500 ${ColorFunction(
                             championData.tags
