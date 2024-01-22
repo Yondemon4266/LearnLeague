@@ -97,12 +97,13 @@ export default function ChampionsList() {
               ? "text-red-600 hover:text-red-800"
               : ""
           }`}
-          onClick={() =>
+          onClick={() => {
             setDisplayChoice((prev) => {
               if (prev === "allchampions") return prev;
               return "allchampions";
-            })
-          }
+            });
+            setShowItems((prev) => !prev);
+          }}
         >
           Tous les champions
         </button>
@@ -112,12 +113,13 @@ export default function ChampionsList() {
               ? "text-red-600 hover:text-red-800"
               : ""
           }`}
-          onClick={() =>
+          onClick={() => {
             setDisplayChoice((prev) => {
               if (prev === "favoritechampions") return prev;
               return "favoritechampions";
-            })
-          }
+            });
+            setShowItems((prev) => !prev);
+          }}
         >
           Mes champions favoris
         </button>
