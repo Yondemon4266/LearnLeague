@@ -20,14 +20,20 @@ export default function ChampionsList() {
       return Object.entries(championsData)
         .filter(([key]) => key.toLowerCase().includes(search.toLowerCase()))
         .map(([key, value]: any) => (
-          <Link to={`/${key}`} key={value.key} state={key}>
+          <Link
+            to={`/${key}`}
+            key={value.key}
+            state={key}
+            className=" max-md:w-20 max-md:h-20"
+          >
             <div className="flex flex-col  items-center bg-zinc-800 rounded-lg">
               <img
                 src={`./img/champion/${value.image.full}`}
                 alt={key}
                 className="rounded-lg"
               />
-              <h3>{key}</h3>
+
+              <h3 className="max-md:text-xs">{key}</h3>
             </div>
           </Link>
         ));
@@ -41,18 +47,18 @@ export default function ChampionsList() {
               className="border-b-2 border-b-gray-400"
             >
               <div className="bg-zinc-800 rounded-lg flex flex-row">
-                <Link to={`/${key}`} state={key}>
-                  <div className="flex flex-col items-center">
+                <Link to={`/${key}`} state={key} className="">
+                  <div className="flex flex-col items-center w-full">
                     <img
                       src={`./img/champion/${value.champion.image.full}`}
                       alt={key}
                       className="rounded-lg"
                     />
-                    <h3>{key}</h3>
+                    <h3 className="max-md:text-xs">{key}</h3>
                   </div>
                 </Link>
                 {/* BUILD START */}
-                <div className="flex flex-row items-center mx-3 flex-wrap">
+                <div className="flex flex-row items-center flex-wrap max-md:flex-wrap max-md: gap-y-2 max-md:pb-2">
                   {/* ITERER A TRAVERS LE BUILD PERSO */}
                   <ItemsInBuild
                     keyHero={key}
@@ -119,9 +125,9 @@ export default function ChampionsList() {
       <div
         className={`flex ${
           displayChoice === "allchampions"
-            ? "flex-row  flex-wrap items-center justify-center gap-2"
+            ? "flex-row  flex-wrap items-center justify-center gap-2 max-md:gap-y-5"
             : "flex-col"
-        }  h-80 overflow-auto mb-4 mx-3`}
+        }  h-80 overflow-auto mb-4 `}
       >
         {filteredChampions}
       </div>

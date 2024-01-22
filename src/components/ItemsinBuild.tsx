@@ -24,7 +24,7 @@ export default function ItemsInBuild({
             setChampKey(keyHero);
             setShowItems((prev: boolean) => !prev);
           }}
-          className="h-20 w-20 mx-2 shadow-gray-500 shadow-md transition-shadow duration-200 hover:shadow-xl hover:shadow-gray-600 "
+          className="h-20 w-20 mx-2 shadow-gray-500 shadow-md transition-shadow duration-200 hover:shadow-xl hover:shadow-gray-600 max-md:w-12 max-md:h-12"
           style={{ background: "#040D0A" }}
         >
           {value.build.length > 0 && value.build[i] && (
