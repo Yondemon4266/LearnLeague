@@ -102,7 +102,7 @@ export default function ChampionsList() {
               if (prev === "allchampions") return prev;
               return "allchampions";
             });
-            setShowItems((prev) => !prev);
+            setShowItems(false);
           }}
         >
           Tous les champions
@@ -118,7 +118,7 @@ export default function ChampionsList() {
               if (prev === "favoritechampions") return prev;
               return "favoritechampions";
             });
-            setShowItems((prev) => !prev);
+            setShowItems(false);
           }}
         >
           Mes champions favoris
