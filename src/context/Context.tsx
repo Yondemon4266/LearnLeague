@@ -26,12 +26,7 @@ export function useAppBuildsContext() {
 }
 
 type AddRemoveChampion = (id: string, data: any) => void;
-type AddItemBuild = (
-  champKey: string,
-  key: string,
-  index: number,
-  item: any
-) => void;
+type AddItemBuild = (champKey: string, index: number, item: any) => void;
 export function ContextProvider({ children }: any) {
   const [favorites, setFavorites] = useLocalStorage("favorites", {});
 
@@ -55,7 +50,7 @@ export function ContextProvider({ children }: any) {
   );
 
   const addItemBuild = useCallback(
-    (champKey: string, key: string, index: number, item: any) => {
+    (champKey: string, index: number, item: any) => {
       setFavorites((prev: any) => {
         const updatedFavorites = { ...prev };
 

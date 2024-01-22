@@ -15,6 +15,7 @@ export default function ItemsList({
   const [categoryDisplay, setCategoryDisplay] = useState("");
   const addItemBuild = useAppBuildsContext();
   const itemsData = Object.entries(Items.data).filter(([key, value]: any) => {
+    console.log(key);
     return (
       !value.into &&
       value.maps["11"] &&
@@ -40,7 +41,7 @@ export default function ItemsList({
             key={key}
             className={`relative z-30 border-2 border-transparent hover:border-solid hover:border-violet-400 group`}
             onClick={() => {
-              addItemBuild(champKey, key, indexItem, value);
+              addItemBuild(champKey, indexItem, value);
               setShowItems((prev: boolean) => !prev);
             }}
           >

@@ -1,7 +1,6 @@
 import ChampionsList from "../components/ChampionsList";
 import { useEffect, useState } from "react";
 
-let firstRender = true;
 export default function Home() {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -14,10 +13,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div
-      className="animate-fadeanim"
-      onAnimationEnd={() => (firstRender = false)}
-    >
+    <div className="animate-fadeanim">
       <div
         className="absolute top-0 left-0 -z-10 w-screen h-screen"
         style={{
