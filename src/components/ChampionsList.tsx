@@ -24,7 +24,7 @@ export default function ChampionsList() {
             to={`/${key}`}
             key={value.key}
             state={key}
-            className=" max-md:w-14 max-md:h-14"
+            className=" max-md:w-20 max-md:h-20"
           >
             <div className="flex flex-col  items-center bg-zinc-800 rounded-lg">
               <img
