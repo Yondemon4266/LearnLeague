@@ -208,44 +208,44 @@ export default function ChampionDetails() {
             </div>
             {/* End Champion Details */}
           </div>
+          {/* tips start */}
+          <div className="my-10 p-4 bg-zinc-800/75 rounded-lg flex flex-col gap-3 max-w-3xl mx-auto text-justify max-md:max-w-screen-sm max-md:text-xs max-md:mt-10 max-md:border-zinc-800/[.60] max-md:m-4">
+            <div className="">
+              <h4 className="font-semibold text-lg text-green-500">
+                Conseils joueur
+              </h4>
+              <ul className="flex flex-col gap-y-2">
+                {championData.allytips.length > 0 ? (
+                  championData.allytips.map((tip: string, index: number) => (
+                    <li key={index}>- {tip}</li>
+                  ))
+                ) : (
+                  <li className="leading-10">
+                    - Il n'y a pas encore de conseils pour ce champion
+                  </li>
+                )}
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-lg text-red-500">
+                Conseils ennemi
+              </h4>
+              <ul className="flex flex-col gap-y-2">
+                {championData.enemytips.length > 0 ? (
+                  championData.enemytips.map((etip: string, index: number) => (
+                    <li key={index}>- {etip}</li>
+                  ))
+                ) : (
+                  <li className="leading-10">
+                    - Il n'y a pas encore de conseils contre ce champion
+                  </li>
+                )}
+              </ul>
+            </div>
+          </div>
+          {/* tips end */}
           {/* End Carousel */}
         </div>
-        {/* tips start */}
-        <div className="my-10 p-4 bg-zinc-800/75 rounded-lg flex flex-col gap-3 max-w-3xl mx-auto text-justify max-md:max-w-screen-sm max-md:text-xs max-md:mt-72">
-          <div className="">
-            <h4 className="font-semibold text-lg text-green-500">
-              Conseils joueur
-            </h4>
-            <ul className="flex flex-col gap-y-2">
-              {championData.allytips.length > 0 ? (
-                championData.allytips.map((tip: string, index: number) => (
-                  <li key={index}>- {tip}</li>
-                ))
-              ) : (
-                <li className="leading-10">
-                  - Il n'y a pas encore de conseils pour ce champion
-                </li>
-              )}
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-semibold text-lg text-red-500">
-              Conseils ennemi
-            </h4>
-            <ul className="flex flex-col gap-y-2">
-              {championData.enemytips.length > 0 ? (
-                championData.enemytips.map((etip: string, index: number) => (
-                  <li key={index}>- {etip}</li>
-                ))
-              ) : (
-                <li className="leading-10">
-                  - Il n'y a pas encore de conseils contre ce champion
-                </li>
-              )}
-            </ul>
-          </div>
-        </div>
-        {/* tips end */}
       </div>
     );
   }
