@@ -81,7 +81,7 @@ export default function ChampionsList() {
       <img
         src="./img/logo.png"
         alt="logo"
-        className="h-32 w-64 absolute top-10 max-md:h-14 max-md:w-32 max-md:top-6"
+        className="h-32 w-64 absolute top-10 max-md:h-14 max-md:w-32 max-md:top-6 logo"
       />
       <input
         type="search"
