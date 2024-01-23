@@ -17,6 +17,7 @@ export default {
         fadeanim: "fade 1s ease-in forwards",
         fadetranslate: "fadeX 0.4s ease forwards",
       },
+      
     },
   },
   plugins: [],

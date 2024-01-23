@@ -17,6 +17,14 @@ export default function ChampionDetails() {
   const favorites = useApp();
   const addRemoveChampions = useAppUpdateFavoriteChampions();
   const navigation = useNavigate();
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const image = new Image();
+    image.src = `./bigImg/champion/splash/${champId}_${currentSkin}.jpg`;
+    image.onload = () => {
+      setLoading(false);
+    };
+  }, []);
 
   useEffect(() => {
     const fetchChampionData = async () => {
