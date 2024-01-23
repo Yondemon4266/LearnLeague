@@ -1,7 +1,6 @@
 const largeurEcran = window.innerWidth;
 
 export function TruncateText(text: string) {
-  console.log(largeurEcran);
   if (largeurEcran > 1000) {
     if (text.length > 22) {
       return text.substring(0, 22) + "...";

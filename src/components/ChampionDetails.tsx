@@ -5,7 +5,7 @@ import { ColorFunction } from "../utility/ColorFunction";
 import Tag from "./Tag";
 import { TruncateText } from "../utility/TruncateText";
 import { useApp, useAppUpdateFavoriteChampions } from "../context/Context";
-
+import { motion } from "framer-motion";
 export default function ChampionDetails() {
   const state = useLocation();
   const champId: string = state.state;
@@ -57,11 +57,15 @@ export default function ChampionDetails() {
     return <div>loading</div>;
   } else {
     return (
-      <div
-        className=" text-white w-screen h-screen bg-fixed overflow-x-hidden caret-transparent transition-fade"
+      <motion.div
+        className=" text-white w-screen h-screen bg-fixed overflow-x-hidden caret-transparent duration-1000"
         style={{
-          background: `url(./bigImg/champion/splash/${champId}_${currentSkin}.jpg) center/cover`,
+          background: !loading
+            ? `url('./bigImg/champion/splash/${champId}_${currentSkin}.jpg') center/cover`
+            : "black",
         }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
       >
         {/* Image */}
         <BiArrowBack
@@ -254,7 +258,7 @@ export default function ChampionDetails() {
           {/* tips end */}
           {/* End Carousel */}
         </div>
-      </div>
+      </motion.div>
     );
   }
 }
