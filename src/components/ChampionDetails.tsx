@@ -221,7 +221,7 @@ export default function ChampionDetails() {
             {/* End Champion Details */}
           </div>
           {/* tips start */}
-          <div className="my-10 p-4 bg-zinc-800/75 rounded-lg flex flex-col gap-3 max-w-3xl mx-auto text-justify max-md:max-w-screen-sm max-md:text-xs max-md:mt-10 max-md:border-zinc-800/[.60] max-md:m-4">
+          <div className="my-10 p-4 bg-zinc-800/75 rounded-lg flex flex-col gap-3 max-w-3xl mx-auto text-justify max-md:max-w-screen-sm max-md:text-xs max-md:mt-10 max-md:border-zinc-800/[.60] max-md:m-4 absolute -bottom-96 left-1/2 -translate-x-1/2 max-md:relative max-md:-bottom-2">
             <div className="">
               <h4 className="font-semibold text-lg text-green-500">
                 Conseils joueur
